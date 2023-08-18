@@ -110,9 +110,87 @@ import hotel19 from "../assets/hotel19.jpg";
 import hotel20 from "../assets/hotel20.jpg";
 
 
-const propertyTypes = ["house", "villa", "flat", "rowhouse", "bungalow", "hotel"];
+export const propertyTypes = ["house", "villa", "flat", "rowhouse", "bungalow", "hotel"];
 const propertyNames = ["Plam Harbor", "Sunset Villa", "Urban Flat", "Green Rowhouse", "Seaside Bungalow", "Luxury Hotel"];
+export const LocationData = [
+    "Alabama",
+    "Alaska",
+    "Arizona",
+    "Arkansas",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "Delaware",
+    "Florida",
+    "Georgia",
+    "Hawaii",
+    "Idaho",
+    "Illinois",
+    "Indiana",
+    "Iowa",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Maine",
+    "Maryland",
+    "Massachusetts",
+    "Michigan",
+    "Minnesota",
+    "Mississippi",
+    "Missouri",
+    "Montana",
+    "Nebraska",
+    "Nevada",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "New York",
+    "North Carolina",
+    "North Dakota",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Pennsylvania",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
+    "Utah",
+    "Vermont",
+    "Virginia",
+    "Washington",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming"
+];
 
+export const priceRanges = [
+    "$0 - $500",
+    "$501 - $1000",
+    "$1001 - $1500",
+    "$1501 - $2000",
+    "$2001 - $2500",
+    "$2501 - $3000",
+    "$3001 - $3500",
+    "$3501 - $4000",
+    "$4001 - $4500",
+    "$4501 - $5000",
+    "$5001 - $5500",
+    "$5501 - $6000",
+    "$6001 - $6500",
+    "$6501 - $7000",
+    "$7001 - $7500",
+    "$7501 - $8000",
+    "$8001 - $8500",
+    "$8501 - $9000",
+    "$9001 - $9500",
+    "$9501 - $10000"
+];
+  
+
+  
+  
 const generateProperty = (type: string, index: number) => {
     return {
         propertyImage: `${type}${index + 1}`,

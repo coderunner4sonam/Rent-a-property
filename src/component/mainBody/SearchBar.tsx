@@ -9,27 +9,36 @@ const SearchBar = () => {
   };
 
   return (
-    <div style={searchBarStyle}>
-      <div><h1>Search properties to rent</h1></div>
-      <div onClick={toggleInputProperty} style={toggleStyle}>
-        <input style={searchInputStyle} type="text" placeholder='search with search bar'/><i style={inputIconStyle} className={`fa ${showInputProperty ? 'fa-angle-up' : 'fa-angle-down'}`}></i>
-        {showInputProperty && (
-          <div style={dropdownInputStyle}>
-            <span>Add Property</span>
-            <span>Edit Property</span>
-          </div>
-        )}
+    <div style={searchParentStyle}>
+      <div style={searchBarStyle}>
+        <div>
+          <h1>Search properties to rent</h1>
+        </div>
+        <div onClick={toggleInputProperty} style={toggleStyle}>
+          <input style={searchInputStyle} type="text" placeholder='search with search bar'/><i style={inputIconStyle} className={`fa ${showInputProperty ? 'fa-angle-up' : 'fa-angle-down'}`}></i>
+          {showInputProperty && (
+            <div style={dropdownInputStyle}>
+              <span>Add Property</span>
+              <span>Edit Property</span>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
 }
 
+const searchParentStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+}
 const searchBarStyle: React.CSSProperties = {
   display: "flex",
-  justifyContent: "space-around",
+  justifyContent: "space-between",
   alignItems: "center",
   height: "15vh",
-  border: "1px solid black",
+  width:"80%",
 }
 const searchInputStyle: React.CSSProperties = {
   height: "38px",

@@ -24,7 +24,7 @@ const buttonDivStyle: React.CSSProperties = {
     justifyContent:"space-evenly",
     alignItems:"center",
 }
-const buttonStyle: React.CSSProperties = {
+export const buttonStyle: React.CSSProperties = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
