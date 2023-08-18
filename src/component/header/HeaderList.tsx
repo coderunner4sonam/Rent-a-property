@@ -18,7 +18,7 @@ const HeaderList = () => {
       <div style={toggleStyle} className='hoverStyle'>Rent</div>
       <div style={toggleStyle} className='hoverStyle'>Buy</div>
       <div style={toggleStyle} className='hoverStyle'>Sell</div>
-      <div onClick={toggleManageProperty} style={toggleStyle} className='hoverStyle'>
+      <div onClick={toggleManageProperty} style={toggleStyle}>
         <div>
           Manage Property <i className={`fa ${showManageProperty ? 'fa-angle-up' : 'fa-angle-down'}`}></i>
         </div>
@@ -29,7 +29,7 @@ const HeaderList = () => {
           </div>
         )}
       </div>
-      <div onClick={toggleResources} style={toggleStyle} className='hoverStyle'>
+      <div onClick={toggleResources} style={toggleStyle}>
         <div>
           Resources <i className={`fa ${showResources ? 'fa-angle-up' : 'fa-angle-down'}`}></i>
         </div>
@@ -51,12 +51,12 @@ const headerListStyle: React.CSSProperties = {
     alignItems: "center",
     position: "relative", 
 };
-const toggleStyle: React.CSSProperties = {
+export const toggleStyle: React.CSSProperties = {
     cursor: "pointer",
 };
-const dropdownManageStyle: React.CSSProperties = {
+export const dropdownManageStyle: React.CSSProperties = {
     background: "#fff",
-    width: "100px", 
+    width: "120px", 
     position: "absolute",
     top: "100%",
     left: "250px",
@@ -73,3 +73,4 @@ const dropdownResourceStyle: React.CSSProperties = {
 };
   
 export default HeaderList;
+
