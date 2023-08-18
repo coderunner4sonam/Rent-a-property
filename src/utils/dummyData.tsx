@@ -207,14 +207,14 @@ const generateProperty = (type: string, index: number) => {
     };
 };
 
-const generatedProperties: dummyDataType[] = [];
+export const dummyData: dummyDataType[] = [];
 
 for (let i = 0; i < 100; i++) {
     const type = propertyTypes[i % propertyTypes.length];
-    generatedProperties.push(generateProperty(type, i));
+    dummyData.push(generateProperty(type, i));
 }
 
-console.log(generatedProperties);
+
 
 
 
