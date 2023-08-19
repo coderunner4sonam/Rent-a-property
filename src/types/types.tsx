@@ -12,6 +12,14 @@
     size : string,
   }
 
+  export interface filterMatrixType {
+    Location: string,
+    When:string,
+    Price:number | null,
+    PropertyType:string,
+  }
+
+
 
 
 

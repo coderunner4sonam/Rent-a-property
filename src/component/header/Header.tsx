@@ -17,7 +17,7 @@ const headerStyle: React.CSSProperties = {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    border: "1px solid black",
-    height: "10vh"
+    height: "10vh",
+    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
 }
 export default Header

@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {dummyData} from "../../utils/dummyData"
-import { dummyDataType } from '../../types/types'
-import Card from './Card'
+import { dummyDataType, filterMatrixType } from '../../types/types'
+import Card from './Card';
 
-const PropertyCards = () => {
+interface setFilterMatrixType {
+    filterMatrix:filterMatrixType,
+}
+
+const PropertyCards : React.FC<setFilterMatrixType> = ({filterMatrix}) => {
+
+    const filterData = dummyData.filter((ele,ind)=> ele.Location === filterMatrix.Location);
+
   return (
     <div style={propertyCardStyle}>
         <div style={subPropertyStyle}>
             {
-                dummyData.map((ele:dummyDataType,ind:number)=>(
+                filterData.map((ele:dummyDataType,ind:number)=>(
                     <Card key={ind} {...ele}/>
                 ))
             }
@@ -16,6 +23,7 @@ const PropertyCards = () => {
     </div>
   )
 }
+
 const propertyCardStyle: React.CSSProperties = {
     display: "flex",
     justifyContent: "center",

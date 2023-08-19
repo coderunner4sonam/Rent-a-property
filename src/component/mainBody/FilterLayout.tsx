@@ -3,9 +3,15 @@ import { LocationData } from '../../utils/dummyData'
 import { priceRanges } from '../../utils/dummyData'
 import { propertyTypes } from '../../utils/dummyData'
 import {buttonStyle} from "../header/HeaderButtons"
+import { filterMatrixType } from '../../types/types'
 
-const FilterLayout = () => {
-    
+interface SetFilterMatrixType {
+    filterMatrix:filterMatrixType,
+    setFilterMatrix:React.Dispatch<React.SetStateAction<filterMatrixType>>
+}
+
+const FilterLayout: React.FC<SetFilterMatrixType> = ({filterMatrix, setFilterMatrix }) => {
+   
   return (
     <div style={FilterLayoutStyle}>
         <div style={FilterSubLayoutStyle}>
@@ -15,7 +21,7 @@ const FilterLayout = () => {
                         <p style={filterHeadingStyle}>Location</p>
                     </div>
                     <div>
-                        <select style={selectFilterStyle}>
+                        <select onChange={(e)=>setFilterMatrix({...filterMatrix,Location:e.target.value})} style={selectFilterStyle}>
                             {
                                 LocationData.map((ele:string,ind:number)=>(
                                     <option>{ele}</option>

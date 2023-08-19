@@ -52,7 +52,7 @@ const inputIconStyle:  React.CSSProperties = {
 }
 const dropdownInputStyle: React.CSSProperties = {
   top: "130px",
-  left: "962px",
+  left: "1010px",
   background: "#fff",
   width: "196px", 
   position: "absolute",
