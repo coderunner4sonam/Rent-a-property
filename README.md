@@ -11,13 +11,12 @@
     - PropertyCards
       - Cards  
 
+# Checkout the demo
+Hosted link: https://rent-a-property-muw2rg6dw-coderunner4sonam.vercel.app/
 
+PS: please see the dummy data in the console via inspect for applying filters accordingly
 
-
-
-
-
-
+.................................................................................................
 
 # Getting Started with Create React App
 
