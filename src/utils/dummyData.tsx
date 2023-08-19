@@ -111,6 +111,7 @@ import hotel18 from "../assets/hotel18.jpeg";
 import hotel19 from "../assets/hotel19.avif";
 import hotel20 from "../assets/hotel20.jpg";
 
+// Define property types and names
 export const propertyImages = [
     house1, house2, house3, house4, house5,
     house6, house7, house8, house9, house10,
@@ -136,6 +137,8 @@ export const propertyImages = [
   
 export const propertyTypes = ["house", "villa", "flat", "rowhouse", "hotel"];
 const propertyNames = ["Plam Harbor", "Sunset Villa", "Urban Flat", "Green Rowhouse", "Seaside Bungalow", "Luxury Hotel"];
+
+// List of US states
 export const LocationData = [
     "Alabama",
     "Alaska",
@@ -189,6 +192,7 @@ export const LocationData = [
     "Wyoming"
 ];
 
+// Price ranges for properties
 export const priceRanges = [
     "$0-$500",
     "$501-$1000",
@@ -212,6 +216,7 @@ export const priceRanges = [
     "$9501-$10000"
 ];
   
+// Function to generate property data based on type and index
 const generateProperty = (type: string, index: number) => {
     return {
         propertyImage: propertyImages[index],
@@ -228,8 +233,10 @@ const generateProperty = (type: string, index: number) => {
     };
 };
 
+// Array to store generated dummy data
 export const dummyData: dummyDataType[] = [];
 
+// Generate 100 dummy data entries with different property types
 for (let i = 0; i < 100; i++) {
     const type = propertyTypes[i % propertyTypes.length];
     dummyData.push(generateProperty(type, i));
