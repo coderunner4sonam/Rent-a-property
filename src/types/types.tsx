@@ -1,6 +1,6 @@
   export  interface dummyDataType {
     propertyImage : string,
-    price : number,
+    price : number | null,
     isPopular : boolean,
     propertyType : string,
     isAvailable : boolean,
@@ -15,7 +15,7 @@
   export interface filterMatrixType {
     Location: string,
     When:string,
-    Price:number | null,
+    Price:string,
     PropertyType:string,
   }
 

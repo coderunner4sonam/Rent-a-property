@@ -27,6 +27,7 @@ const Card = (cardProperties:dummyDataType) => {
     <div style={cardStyle}>
       <div style={propertyImageStyle}>
         <img src={propertyImage} style={propertyImageStyle} alt='Property Image' />
+        {isPopular && <div style={propertyPopularStyle}>Popular</div>}
       </div>
       <div style={cardPropertieStyles}>
         <div style={propertyPriceStyle}>
@@ -41,11 +42,11 @@ const Card = (cardProperties:dummyDataType) => {
         <div style={propertyFooterStyle}>
           <div style={bedStyle}>
             <div><i className="fa fa-bed" aria-hidden="true"></i></div>
-            <div><h5>{beds}</h5></div>
+            <div><h5>{beds}Beds</h5></div>
           </div>
           <div style={bathroomsStyle}>
             <div><i className="fa fa-bath" aria-hidden="true"></i></div>
-            <div><h5>{bathrooms}</h5></div>
+            <div><h5>{bathrooms}Bathrooms</h5></div>
           </div>
           <div style={sizeStyle}>
             <div><i className="fa fa-area-chart" aria-hidden="true"></i></div>
@@ -60,14 +61,29 @@ const Card = (cardProperties:dummyDataType) => {
 const cardStyle: React.CSSProperties = {
   width: "340px",
   height: "350px",
-  border: "1px solid black",
+  border: "0.2px solid grey",
   borderRadius: "5px",
   marginTop: "20px",
-  marginBottom: "20px"
+  marginBottom: "20px",
+  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.4)",
 }
 const propertyImageStyle: React.CSSProperties ={
   height:"180px",
   width:"100%",
+}
+const propertyPopularStyle: React.CSSProperties ={
+  height:"30px",
+  width:"80px",
+  border:"0.5 solid #7268F3",
+  color: "white",
+  backgroundColor: "#7268F3",
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  bottom: "12%",
+  borderRadius: "5px",
+  marginLeft: "-5px"
 }
 const cardPropertieStyles: React.CSSProperties ={
   padding: "10px"

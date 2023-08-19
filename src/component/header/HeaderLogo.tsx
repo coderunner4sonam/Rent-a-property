@@ -3,10 +3,10 @@ import home_logo from "../../assets/home_logo.png";
 
 const HeaderLogo = () => {
   return (
-    <div style={headerLogoStyle}>
+    <div style={headerLogoStyle} onClick={()=>window.location.reload()}>
       <div style={headerImage}>
         <img src={home_logo} style={logoStyle} alt='logo'/>  
-      </div>
+      </div>  
       <div style={headerTitle}>
         <h1>Estatery</h1>
       </div>
@@ -19,8 +19,8 @@ const headerLogoStyle: React.CSSProperties = {
   display: "flex",
   justifyContent: "space-evenly",
   alignItems: "center", 
-  height: "60px"
-
+  height: "60px",
+  cursor: "pointer"
 };
 
 const logoStyle: React.CSSProperties = {

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LocationData } from '../../utils/dummyData'
 import { priceRanges } from '../../utils/dummyData'
 import { propertyTypes } from '../../utils/dummyData'
 import {buttonStyle} from "../header/HeaderButtons"
-import { filterMatrixType } from '../../types/types'
+import { dummyDataType, filterMatrixType } from '../../types/types'
 
 interface SetFilterMatrixType {
     filterMatrix:filterMatrixType,
@@ -11,7 +11,17 @@ interface SetFilterMatrixType {
 }
 
 const FilterLayout: React.FC<SetFilterMatrixType> = ({filterMatrix, setFilterMatrix }) => {
-   
+   const [matrics, setMatrics] = useState<filterMatrixType>({
+    Location:"",
+    When:"",
+    Price:"",
+    PropertyType:"",
+   });
+
+   function handleSearchFilter() {
+        setFilterMatrix({...filterMatrix, ...matrics});
+   }
+
   return (
     <div style={FilterLayoutStyle}>
         <div style={FilterSubLayoutStyle}>
@@ -21,7 +31,7 @@ const FilterLayout: React.FC<SetFilterMatrixType> = ({filterMatrix, setFilterMat
                         <p style={filterHeadingStyle}>Location</p>
                     </div>
                     <div>
-                        <select onChange={(e)=>setFilterMatrix({...filterMatrix,Location:e.target.value})} style={selectFilterStyle}>
+                        <select onChange={(e)=>setMatrics({...matrics,Location:e.target.value})} style={selectFilterStyle}>
                             {
                                 LocationData.map((ele:string,ind:number)=>(
                                     <option>{ele}</option>
@@ -39,7 +49,7 @@ const FilterLayout: React.FC<SetFilterMatrixType> = ({filterMatrix, setFilterMat
                 </div>
                 <div style={subFilterStyle}>
                     <p style={filterHeadingStyle}>Price</p>
-                    <select style={selectFilterStyle}>
+                    <select onChange={(e)=>setMatrics({...matrics,Price:e.target.value})} style={selectFilterStyle}>
                         {
                             priceRanges.map((ele:string,ind:number)=>(
                                 <option>{ele}</option>
@@ -49,7 +59,7 @@ const FilterLayout: React.FC<SetFilterMatrixType> = ({filterMatrix, setFilterMat
                 </div>
                 <div style={subFilterStyle}>
                     <p style={filterHeadingStyle}>Property Type</p>
-                    <select style={selectFilterStyle}>
+                    <select onChange={(e)=>setMatrics({...matrics,PropertyType:e.target.value})} style={selectFilterStyle}>
                         {
                             propertyTypes.map((ele:string,ind:number)=>(
                                 <option>{ele}</option>
@@ -57,7 +67,7 @@ const FilterLayout: React.FC<SetFilterMatrixType> = ({filterMatrix, setFilterMat
                         }
                     </select>
                 </div>
-                <div style={buttonStyle} className='hoverStyle'>
+                <div onClick={handleSearchFilter} style={buttonStyle} className='hoverStyle'>
                     Search
                 </div>
             </div>
@@ -92,8 +102,7 @@ const subFilterStyle: React.CSSProperties = {
     display: "flex",
     flexDirection: "column",
     width: "30%",
-    padding:"20px",
-  
+    padding:"20px"
 }
 const filterHeadingStyle: React.CSSProperties = {
     color: "grey"

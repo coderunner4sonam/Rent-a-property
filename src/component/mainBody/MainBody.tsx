@@ -9,10 +9,10 @@ const MainBody = () => {
   const [ filterMatrix ,setFilterMatrix] = useState<filterMatrixType>({
     Location:"",
     When:"",
-    Price:null,
+    Price:"",
     PropertyType:"",
   });
-
+  
   return (
     <div>
       <SearchBar/>

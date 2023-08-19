@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { dropdownManageStyle, toggleStyle } from '../header/HeaderList';
+import { propertyTypes } from '../../utils/dummyData';
 
 const SearchBar = () => {
   const [showInputProperty, setShowInputProperty] = useState(false);
@@ -18,8 +19,11 @@ const SearchBar = () => {
           <input style={searchInputStyle} type="text" placeholder='search with search bar'/><i style={inputIconStyle} className={`fa ${showInputProperty ? 'fa-angle-up' : 'fa-angle-down'}`}></i>
           {showInputProperty && (
             <div style={dropdownInputStyle}>
-              <span>Add Property</span>
-              <span>Edit Property</span>
+              {
+                propertyTypes.map((ele:string)=>(
+                  <span>{ele}</span>
+                ))
+              }
             </div>
           )}
         </div>
@@ -52,7 +56,7 @@ const inputIconStyle:  React.CSSProperties = {
 }
 const dropdownInputStyle: React.CSSProperties = {
   top: "130px",
-  left: "1010px",
+  left: "1008px",
   background: "#fff",
   width: "196px", 
   position: "absolute",
